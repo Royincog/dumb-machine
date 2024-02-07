@@ -5,8 +5,8 @@ import picthree from "../assets/grid-picthree.png";
 import picfour from "../assets/grid-picfour.png";
 function AboutSection() {
   return (
-    <section class="flex justify-center items-center min-h-screen">
-      <div class="container mx-auto flex flex-col md:flex-row items-center justify-center px-6 lg:px-32 py-12">
+    <section class="flex justify-center items-center min-h-96">
+      <div class="mx-auto flex flex-col md:flex-row items-center justify-center px-6 lg:px-32 py-2">
         <div class="flex-grow flex flex-col items-center md:items-start text-center md:text-left">
           <h1 class="title-font sm:text-4xl text-3xl mb-4 font-semibold text-black">
             Hi, I am Roy !!
