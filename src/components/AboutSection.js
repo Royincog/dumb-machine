@@ -33,19 +33,19 @@ function Grid() {
     <div className="container mx-auto p-4">
       <div className="grid grid-cols-4 gap-4">
         <div className="overflow-hidden rounded-lg">
-          <img src={picone} alt="Gallery Image 1" className="w-full h-auto" />
+          <img src={picone} alt="" className="w-full h-auto" />
         </div>
 
         <div className="overflow-hidden rounded-lg">
-          <img src={pictwo} alt="Gallery Image 2" className="w-full h-auto" />
+          <img src={pictwo} alt="" className="w-full h-auto" />
         </div>
 
         <div className="overflow-hidden rounded-lg">
-          <img src={picthree} alt="Gallery Image 3" className="w-full h-auto" />
+          <img src={picthree} alt="" className="w-full h-auto" />
         </div>
 
         <div className="overflow-hidden rounded-lg">
-          <img src={picfour} alt="Gallery Image 4" className="w-full h-auto" />
+          <img src={picfour} alt="" className="w-full h-auto" />
         </div>
       </div>
     </div>
