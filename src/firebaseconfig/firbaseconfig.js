@@ -1,7 +1,7 @@
 // firebase-config.js
 
 import { initializeApp } from "firebase/app";
-import { getFirestore, initializeFirestore } from "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -16,9 +16,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 // Initialize Firestore
-const db = initializeFirestore(app, {
-  experimentalForceLongPolling: true, // this line
-  useFetchStreams: false, // and this line
-});
+const db = getFirestore(app);
 
 export default db;
