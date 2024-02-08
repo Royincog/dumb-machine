@@ -36,3 +36,10 @@ jobs:
         REACT_APP_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.REACT_APP_FIREBASE_MESSAGING_SENDER_ID }}
         REACT_APP_FIREBASE_APP_ID: ${{ secrets.REACT_APP_FIREBASE_APP_ID }}
     - run: npm test
+    
+- name: Deploy with gh-pages
+  run: |
+    git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+    npx gh-pages -d build -u "github-actions-bot <support+actions@github.com>"
+   env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
