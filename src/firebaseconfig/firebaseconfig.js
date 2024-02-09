@@ -21,4 +21,4 @@ const db = initializeFirestore(app, {
   useFetchStreams: false, // and this line
 });
 
-export default db;
+export { db, app };

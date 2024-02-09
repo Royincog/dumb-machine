@@ -18,9 +18,10 @@ function BlogList() {
   );
 }
 const Card = ({ data }) => {
+  console.log("The data in card is ", data);
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate(`/blog/${data.heading}`);
+    navigate(`/dumb-machine/${data.id}`);
   };
   return (
     <article className="bg-white flex flex-col max-w-xs mx-auto overflow-hidden rounded-lg shadow">

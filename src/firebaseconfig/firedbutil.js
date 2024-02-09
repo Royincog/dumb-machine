@@ -1,4 +1,4 @@
-import db from "./firbaseconfig";
+import { db } from "./firebaseconfig";
 import { doc, updateDoc, getDoc, setDoc } from "firebase/firestore";
 
 const likeDocRef = doc(db, "likes", "lTMZpXLROjJruTwjDErv");
