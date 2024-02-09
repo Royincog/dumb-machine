@@ -11,8 +11,8 @@ function BlogList() {
   }, []);
   return (
     <>
-      {blogs.map((blog) => {
-        return <Card data={blog} />;
+      {blogs.map((blog, index) => {
+        return <Card key={index} data={blog} />;
       })}
     </>
   );
