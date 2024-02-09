@@ -1,6 +1,7 @@
 import { buildCollection, buildProperty } from "firecms";
 
 export type DumbBlog = {
+  id: string;
   heading: string;
   description: string;
   category: string;
@@ -15,6 +16,11 @@ export const dumbblogcollection = buildCollection<DumbBlog>({
   path: "dumbblog",
   icon: "rss_feed",
   properties: {
+    id: buildProperty({
+      name: "Blog ID",
+      validation: { required: true },
+      dataType: "string",
+    }),
     heading: buildProperty({
       name: "Heading",
       validation: { required: true },
@@ -46,7 +52,7 @@ export const dumbblogcollection = buildCollection<DumbBlog>({
         storagePath: "images",
         acceptedFiles: ["image/*"],
         maxSize: 1024 * 1024,
-        storeUrl: true,
+        storeUrl: false,
         metadata: {
           cacheControl: "max-age=1000000",
         },
@@ -62,7 +68,7 @@ export const dumbblogcollection = buildCollection<DumbBlog>({
         storagePath: "images",
         acceptedFiles: ["image/*"],
         maxSize: 1024 * 1024,
-        storeUrl: true,
+        storeUrl: false,
         metadata: {
           cacheControl: "max-age=1000000",
         },
