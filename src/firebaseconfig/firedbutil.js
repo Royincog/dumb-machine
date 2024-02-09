@@ -1,7 +1,7 @@
 import db from "./firbaseconfig";
 import { doc, updateDoc, getDoc, setDoc } from "firebase/firestore";
 
-const likeDocRef = doc(db, "likes", "cgWlggluC0rxq25gzeGm");
+const likeDocRef = doc(db, "likes", "lTMZpXLROjJruTwjDErv");
 
 export const incrementLikeCount = async () => {
   const docSnap = await getDoc(likeDocRef);

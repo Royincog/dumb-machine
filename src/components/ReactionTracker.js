@@ -21,7 +21,7 @@ function ReactionTracker() {
   return (
     <>
       <p className="pb-3 font-semibold">
-        Press the button if you are instructing a dumb <br /> machine like me 🍪☕
+        Press the button if you like the dumb <br /> website 🍪☕
       </p>
       <Button
         onClick={increaseLikeCount}
@@ -31,8 +31,8 @@ function ReactionTracker() {
       <br />
       <div className="py-4">
         <pre>
-          Got total <span>{likeCount}</span> instructor instructing a dumb
-          machine
+          Got total <span className="font-bold">{likeCount}</span>
+          <br /> instructor instructing <br /> a dumb machine
         </pre>
       </div>
     </>

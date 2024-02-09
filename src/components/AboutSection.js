@@ -9,7 +9,7 @@ function AboutSection() {
       <div className="mx-auto flex flex-col md:flex-row items-center justify-center px-6 lg:px-32 py-2">
         <div className="flex-grow flex flex-col items-center md:items-start text-center md:text-left">
           <h1 className="title-font sm:text-4xl text-3xl mb-4 font-semibold text-black">
-            Hi, I am Roy !!
+            Hi, I am Rajarshi Roy !!
           </h1>
           <p className="mb-8 leading-relaxed font-medium">
             I am a happy to go lucky man, never been satisfied with

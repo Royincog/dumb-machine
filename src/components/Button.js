@@ -1,4 +1,5 @@
-export default function Button({ onClick, disabled, text }) {
+export default function Button({ onClick, disabled, text }) 
+{
   return (
     <button
       onClick={onClick}
