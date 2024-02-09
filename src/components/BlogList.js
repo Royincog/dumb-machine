@@ -8,7 +8,7 @@ function BlogList() {
     blogsData.then((data) => {
       setBlogs(data);
     });
-  }, []);
+  }, [blogs]);
   return (
     <>
       {blogs.map((blog, index) => {
