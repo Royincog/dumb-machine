@@ -32,7 +32,6 @@ async function getBlogs() {
   });
   // Promise.all to wait for all getImageUrl promises to resolve
   const modifiedBlogList = await Promise.all(blogsPromise);
-  console.log("Modified blog list is ", modifiedBlogList);
   return modifiedBlogList;
 }
 
