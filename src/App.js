@@ -5,7 +5,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<IndexPage />} />
+        <Route path="/dumb-machine" element={<IndexPage />} />
 
         {/* Add more routes as needed */}
       </Routes>
