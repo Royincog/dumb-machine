@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import getBlogs from "../firebaseconfig/blogs/firebasegetblogutil";
 import { useNavigate } from "react-router-dom";
 import Showdown from "showdown";
-import randomBlog from "../assets/random-blog.png";
 
 function BlogList() {
   const [blogs, setBlogs] = useState([]);
