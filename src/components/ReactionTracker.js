@@ -11,9 +11,12 @@ function ReactionTracker() {
       setLikeCount((count) => count + 1);
       incrementLikeCount();
       setHasLiked(true);
+      localStorage.setItem("userHasLiked", "true");
     }
   }
   useEffect(() => {
+    const userHasLiked = localStorage.getItem("userHasLiked") === "true"; //Get if user has liked
+    setHasLiked(userHasLiked);
     const num = getLikeCount(); //getting a promise
     num.then((likeCount) => setLikeCount(likeCount)); //setting the like count
   }, []);
@@ -26,14 +29,13 @@ function ReactionTracker() {
       <Button
         onClick={increaseLikeCount}
         disabled={hasLiked}
-        text="Hello World !!"
+        text="Hit a Like 👍"
       />
       <br />
       <div className="py-4">
-        <pre>
-          Got total <span className="font-bold">{likeCount}</span>
-          <br /> instructor instructing <br /> a dumb machine
-        </pre>
+        <p>
+          Got total <span className="font-bold">{likeCount} 👍 dumb</span> likes
+        </p>
       </div>
     </>
   );

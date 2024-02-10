@@ -33,10 +33,10 @@ const Card = ({ data, converter }) => {
   };
   return (
     <>
-      <article className="bg-white flex flex-col max-w-xs mx-auto overflow-hidden rounded-lg shadow py-4">
+      <article className="bg-white flex flex-col max-w-xs overflow-hidden rounded-lg shadow py-4">
         <img src={data.thumbnail_image} alt="" onClick={handleClick} />
         <div className="px-4 py-6">
-          <h2 className="font-bold text-2xl">{data.heading}</h2>
+          <h2 className="font-semibold text-2xl">{data.heading}</h2>
           <div className="py-2">
             <p
               className="overflow-hidden overflow-ellipsis whitespace-nowrap"
