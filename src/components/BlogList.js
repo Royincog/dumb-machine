@@ -1,17 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import useSWR from "swr";
 import getBlogs from "../firebaseconfig/blogs/firebasegetblogutil";
 import { useNavigate } from "react-router-dom";
 import Showdown from "showdown";
+import LoadingDots from "./LoadingDots";
 
 function BlogList() {
-  const [blogs, setBlogs] = useState([]);
   const converter = new Showdown.Converter();
-  useEffect(() => {
-    const blogsData = getBlogs();
-    blogsData.then((data) => {
-      setBlogs(data);
-    });
-  }, []);
+  const { data: blogs, error } = useSWR("blogs", getBlogs);
+  if (error) return <div className="text-red-700">Failed to load</div>;
+  if (!blogs)
+    return (
+      <React.Fragment>
+        <LoadingDots />
+      </React.Fragment>
+    );
   return (
     <>
       {" "}

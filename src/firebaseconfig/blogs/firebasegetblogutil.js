@@ -22,12 +22,17 @@ async function getBlogs() {
   const blogsPromise = blogList.map(async (blog) => {
     try {
       // Await the URL directly inside the map
-      const url = await getImageUrl(blog.thumbnail_image);
+      const thumbnail_image_url = await getImageUrl(blog.thumbnail_image);
+      const blog_image_url = await getImageUrl(blog.blog_image);
       // Return a new object to avoid mutating the original blog object
-      return { ...blog, thumbnail_image: url };
+      return {
+        ...blog,
+        thumbnail_image: thumbnail_image_url,
+        blog_image: blog_image_url,
+      };
     } catch (error) {
       console.error("Error setting image URL: ", error);
-      return { ...blog, thumbnail_image: "", error: true };
+      return { ...blog, thumbnail_image: "", blog_image: "", error: true };
     }
   });
   // Promise.all to wait for all getImageUrl promises to resolve
