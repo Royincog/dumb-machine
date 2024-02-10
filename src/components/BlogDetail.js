@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useSWR from "swr";
 import Showdown from "showdown";
-import image from "../assets/picfive.png";
 import getBlogs from "../firebaseconfig/blogs/firebasegetblogutil";
 import LoadingDots from "./LoadingDots";
 
@@ -39,20 +38,30 @@ const BlogDetail = () => {
 };
 
 const BlogSection = ({ blog }) => {
-  const converter = new Showdown.Converter();
+  const classMap = {
+    h1: "text-3xl font-semibold",
+    p: "px-4 sm:px-6 md:px-8 py-4 md:py-8 leading-loose text-lg",
+  };
+
+  const bindings = Object.keys(classMap).map((key) => ({
+    type: "output",
+    regex: new RegExp(`<${key}(.*)>`, "g"),
+    replace: `<${key} class="${classMap[key]}" $1>`,
+  }));
+  const converter = new Showdown.Converter({ extensions: [...bindings] });
   const description = converter.makeHtml(blog.description);
 
   return (
     <main>
       <section
         id="content"
-        className="prose lg:prose-2xl container mx-auto font-Lora px-[12rem] py-[12rem] my-2"
+        className="prose prose-sm mx-auto font-Lora px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[18rem] py-6 md:py-20 lg:py-18 my-2"
       >
         <article>
           <header className="w-full mx-auto">
             <h1
               style={{ marginBottom: "0" }}
-              className="text-6xl font-bold mb-6 break-words"
+              className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 break-words overflow-hidden text-wrap"
             >
               {blog.heading}
             </h1>
@@ -71,25 +80,8 @@ const BlogSection = ({ blog }) => {
               />
               <div className="flex items-center">
                 <div className="author">
-                  <p rel="author" className="font-semibold">
+                  <p htmlFor="author" className="font-semibold text-xl">
                     By Dumb Person
-                  </p>
-                </div>
-              </div>
-              <div className="flex flex-1 justify-end items-center">
-                <div className="py-[10px] font-semibold pb-8">
-                  Friday,{" "}
-                  <time
-                    pubdate="true"
-                    dateTime="2022-10-14"
-                    title="October 14th, 2022"
-                  >
-                    October 14th, 2022
-                  </time>
-                </div>
-                <div>
-                  <p aria-label="Share this article" href="#">
-                    <i className="fa-solid fa-share-from-square text-2-xl"></i>
                   </p>
                 </div>
               </div>
@@ -97,12 +89,12 @@ const BlogSection = ({ blog }) => {
           </footer>
           <figure>
             <img
-              className=""
+              className="mx-auto object-contain max-w-md h-auto"
               alt="A vintage, blue, slightly rusted truck with a wooden bed overflowing with pumpkins on an gloomy overcast day. Surrounding the truck are beautiful orange and white pumpkins varying from small to large."
-              src={image}
+              src={blog.blog_image}
             />
           </figure>
-          <div className="md:px-8 py-8 leading-loose">
+          <div>
             <div
               dangerouslySetInnerHTML={{
                 __html: description,
