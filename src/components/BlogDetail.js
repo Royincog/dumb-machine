@@ -89,7 +89,7 @@ const BlogSection = ({ blog }) => {
           </footer>
           <figure>
             <img
-              className="mx-auto object-contain max-w-md h-auto"
+              className="mx-auto w-full max-w-md h-auto"
               alt="A vintage, blue, slightly rusted truck with a wooden bed overflowing with pumpkins on an gloomy overcast day. Surrounding the truck are beautiful orange and white pumpkins varying from small to large."
               src={blog.blog_image}
             />

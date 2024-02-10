@@ -26,11 +26,14 @@ function ReactionTracker() {
       <p className="pb-3 font-semibold">
         Press the button if you like the dumb <br /> website 🍪☕
       </p>
-      <Button
-        onClick={increaseLikeCount}
-        disabled={hasLiked}
-        text="Hit a Like 👍"
-      />
+      <div className="flex flex-row gap-3 justify-center">
+        <Button
+          onClick={increaseLikeCount}
+          disabled={hasLiked}
+          text="Hit Like"
+        />
+      </div>
+
       <br />
       <div className="py-4">
         <p>
