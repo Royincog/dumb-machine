@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useSWR from "swr";
 import Showdown from "showdown";
-import image from "../assets/picfive.png";
 import getBlogs from "../firebaseconfig/blogs/firebasegetblogutil";
 import LoadingDots from "./LoadingDots";
 
