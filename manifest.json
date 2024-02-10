@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Dumb Machine",
+  "name": "Giving instruction to dumb machine !!",
   "icons": [
     {
       "src": "favicon.ico",
