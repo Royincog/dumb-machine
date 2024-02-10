@@ -32,7 +32,7 @@ function BlogList() {
 const Card = ({ data, converter }) => {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate(`/dumb-machine/${data.id}`);
+    navigate(`/${data.id}`);
   };
   return (
     <>
