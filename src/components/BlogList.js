@@ -41,12 +41,12 @@ const Card = ({ data, converter }) => {
         <div className="px-4 py-6">
           <h2 className="font-semibold text-2xl">{data.heading}</h2>
           <div className="py-2">
-            <p
+            <div
               className="overflow-hidden overflow-ellipsis whitespace-nowrap"
               dangerouslySetInnerHTML={{
                 __html: converter.makeHtml(data.description),
               }}
-            ></p>
+            ></div>
           </div>
         </div>
       </article>
