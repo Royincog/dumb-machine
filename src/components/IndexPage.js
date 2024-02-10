@@ -4,6 +4,7 @@ import BlogList from "./BlogList";
 import RandomAvatar from "./RandomAvatar";
 import ReactionTracker from "./ReactionTracker";
 import AnimatedTextCharacter from "./AnimatedTextCharacter ";
+import CreditStack from "./CreditStack";
 function IndexPage() {
   return (
     <>
@@ -28,6 +29,7 @@ function IndexPage() {
           </div>
         </div>
       </div>
+      <CreditStack />
     </>
   );
 }
