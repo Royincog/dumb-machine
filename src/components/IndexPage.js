@@ -4,7 +4,7 @@ import BlogList from "./BlogList";
 import CreditStack from "./CreditStack";
 import RandomAvatar from "./RandomAvatar";
 import ReactionTracker from "./ReactionTracker";
-import { Fade } from "react-awesome-reveal";
+import { Fade, Bounce } from "react-awesome-reveal";
 function IndexPage() {
   return (
     <>
@@ -25,9 +25,13 @@ function IndexPage() {
               <span className="font-semibold">"dumb"</span> experiences in tech
               !!
             </p>
-            <ReactionTracker />
-            <AboutSection />
-            <BlogList />
+            <Bounce cascade damping={0.2}>
+              <ReactionTracker />
+              <AboutSection />
+            </Bounce>
+            <Fade cascade damping={0.1}>
+              <BlogList />
+            </Fade>
           </div>
         </div>
       </div>

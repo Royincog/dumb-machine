@@ -16,9 +16,9 @@ function RandomAvatar() {
   }, [generateSeed]);
 
   useEffect(() => {
-    fetchRandomAvatar(); // Fetch an avatar immediately on component mount
-    const intervalId = setInterval(fetchRandomAvatar, 1000); // Set up an interval to fetch a new avatar every second
-    return () => clearInterval(intervalId); // Clean up interval on component unmount
+    fetchRandomAvatar();
+    const intervalId = setInterval(fetchRandomAvatar, 1000);
+    return () => clearInterval(intervalId);
   }, [fetchRandomAvatar]);
 
   return (
