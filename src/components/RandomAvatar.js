@@ -27,7 +27,7 @@ function RandomAvatar() {
         <img
           src={avatarImage}
           alt="Random Avatar"
-          style={{ width: "7rem", height: "7rem", marginRight: "3rem" }}
+          style={{ width: "7rem", height: "7rem", marginRight: "1rem" }}
         />
       )}
     </>
