@@ -3,8 +3,11 @@ import picone from "../assets/grid-picone.png";
 import pictwo from "../assets/grid-pictwo.png";
 import picthree from "../assets/grid-picthree.png";
 import picfour from "../assets/grid-picfour.png";
+import Button from "./Button";
+import { useNavigate } from "react-router-dom";
 
 function AboutSection() {
+  const navigate = useNavigate();
   return (
     <section className="flex justify-center items-center lg:min-h-96 min-[320px]:min-h-[512px]">
       <div className="mx-auto flex flex-col md:flex-row items-center justify-center px-6 lg:px-32 py-2">
@@ -21,6 +24,18 @@ function AboutSection() {
             <br />
             Dumb Machine !!
           </p>
+          <div className="py-3">
+            {" "}
+            <p className="mb-2 leading-relaxed font-semibold">
+              What other people say about me !!{" "}
+            </p>
+            <Button
+              text="dumb comments"
+              onClick={() => {
+                navigate("/testimonial");
+              }}
+            />
+          </div>
         </div>
         <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
           <Grid />
