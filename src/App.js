@@ -2,6 +2,7 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import IndexPage from "./components/IndexPage";
 import BlogDetail from "./components/BlogDetail";
 import Testimonial from "./components/Testimonial";
+import { UserProvider } from "./contexts/UserProvider";
 
 function App() {
   return (
@@ -9,7 +10,14 @@ function App() {
       <Routes>
         <Route path="/" element={<IndexPage />} />
         <Route path="/:id" element={<BlogDetail />} />
-        <Route path="/testimonial" element={<Testimonial />} />
+        <Route
+          path="/testimonial"
+          element={
+            <UserProvider>
+              <Testimonial />
+            </UserProvider>
+          }
+        />
       </Routes>
     </Router>
   );
