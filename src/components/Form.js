@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import { useUser } from "../contexts/UserProvider";
 import { saveUserTestimonialToFireBase } from "../firebaseconfig/auth/saveuserdata";
 import { ToastContainer, toast } from "react-toastify";
-import TextareaAutosize from "react-textarea-autosize";
 import "react-toastify/dist/ReactToastify.css";
 
 import Button from "./Button";
