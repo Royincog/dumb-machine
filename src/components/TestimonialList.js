@@ -10,7 +10,7 @@ function TestimonialList() {
   return (
     <>
       {users.map(
-        ({ uid, displayName, testimonial }, index) =>
+        ({ uid, displayName, testimonial, userImage }, index) =>
           testimonial && (
             <Bounce key={uid}>
               {" "}
@@ -18,6 +18,7 @@ function TestimonialList() {
                 displayName={displayName}
                 testimonial={testimonial}
                 index={index + 1}
+                userImage={userImage}
               />
             </Bounce>
           )

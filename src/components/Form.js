@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import Button from "./Button";
 const Form = () => {
+  const regexPtt = /^[A-Za-z]+( +[A-Za-z]+)*$/;
   const { currentUser } = useUser();
   const inputRef = useRef(null);
   const handleSubmit = async (event) => {
@@ -16,18 +17,22 @@ const Form = () => {
       return;
     }
     const testimonial = inputRef.current.value;
-    await saveUserTestimonialToFireBase(currentUser, testimonial)
-      .then(() => {
-        toast.success("Thanks for the dumb comment !! 🦩");
-        console.log("Testimonial saved successfully.");
-        //Cleaning up the form has been submitted and emitting a toast !!
-        inputRef.current.value = "";
-        const parentDiv = inputRef.current.parentNode;
-        parentDiv.style.display = "none";
-      })
-      .catch((error) => {
-        console.error("Failed to save testimonial:", error);
-      });
+    if (regexPtt.test(testimonial)) {
+      await saveUserTestimonialToFireBase(currentUser, testimonial)
+        .then(() => {
+          toast.success("Thanks for the dumb comment !! 🦩");
+          console.log("Testimonial saved successfully.");
+          //Cleaning up the form has been submitted and emitting a toast !!
+          inputRef.current.value = "";
+          const parentDiv = inputRef.current.parentNode;
+          parentDiv.style.display = "none";
+        })
+        .catch((error) => {
+          console.error("Failed to save testimonial:", error);
+        });
+    } else {
+      toast.error("Try to put dumb words not gibberish 😒");
+    }
   };
 
   return (

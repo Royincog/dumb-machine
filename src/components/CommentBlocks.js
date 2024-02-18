@@ -1,6 +1,7 @@
 import React from "react";
 
-function CommentBlocks({ displayName, testimonial, index }) {
+function CommentBlocks({ displayName, testimonial, index, userImage }) {
+  console.log("User image is ", userImage);
   return (
     <div className="flex flex-col items-center py-10">
       <div className="space-y-4 w-full max-w-xl">
@@ -10,7 +11,11 @@ function CommentBlocks({ displayName, testimonial, index }) {
           <div className="flex -space-x-2 mr-2">
             <img
               className="w-10 h-10 rounded-full border border-gray-200"
-              src="https://api.dicebear.com/7.x/notionists/svg?seed=Felix&scale=200"
+              src={
+                userImage
+                  ? userImage
+                  : "https://api.dicebear.com/7.x/notionists/svg?seed=Felix&scale=200"
+              }
               alt="Avatar"
             />
           </div>

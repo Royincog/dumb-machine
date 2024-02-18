@@ -7,7 +7,11 @@ export const saveUserDataToFireBase = async (userAuth) => {
 
   if (!userSnapShot.exists()) {
     const { displayName, email, uid } = userAuth;
-    const userImage = `https://api.dicebear.com/7.x/notionists/svg?seed=${displayName}&scale=200`;
+    //Cutting it short
+    const userImage = `https://api.dicebear.com/7.x/notionists/svg?seed=${displayName.substring(
+      0,
+      2
+    )}&scale=200`;
     const createdAt = new Date();
 
     try {
@@ -29,10 +33,21 @@ export const saveUserDataToFireBase = async (userAuth) => {
 export const saveUserTestimonialToFireBase = async (userAuth, testimonial) => {
   const userDocRef = doc(db, "users", userAuth?.uid);
   const { displayName, email, uid } = userAuth;
+  const userImage = `https://api.dicebear.com/7.x/notionists/svg?seed=${displayName.substring(
+    0,
+    2
+  )}&scale=200`;
   try {
     await setDoc(
       userDocRef,
-      { displayName, email, uid, testimonial, updatedAt: new Date() },
+      {
+        displayName,
+        email,
+        uid,
+        testimonial,
+        userImage,
+        updatedAt: new Date(),
+      },
       { merge: true }
     ); // This option merges the update into the existing document
     console.log("Testimonial saved successfully");
