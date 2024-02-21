@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import Button from "./Button";
 const Form = () => {
-  const regexPtt = /^[A-Za-z]+( +[A-Za-z]+)*$/;
+  const regexPtt = /^[\p{L}\p{N}]+( +[\p{L}\p{N}]+)*$/u;
   const { currentUser } = useUser();
   const inputRef = useRef(null);
   const handleSubmit = async (event) => {
@@ -38,11 +38,11 @@ const Form = () => {
   return (
     <React.Fragment>
       {" "}
-      <div className="inputForm">
+      <div className="inputForm py-6">
         {" "}
         <input
           ref={inputRef}
-          placeholder="Place Text"
+          placeholder="🦄 say dumb things !!"
           className="bg-white appearance-none border-2 border-gray-200 rounded py-2 px-4 text-black leading-tight focus:outline-none focus:bg-white focus:border-black mr-4"
           id="inline-full-name"
           type="text"

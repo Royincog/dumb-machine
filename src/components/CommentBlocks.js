@@ -20,11 +20,11 @@ function CommentBlocks({ displayName, testimonial, index, userImage }) {
             />
           </div>
           <div>
-            <div className="text-sm font-medium text-gray-700">
+            <div className="text-sm font-semibold text-black pr-10 py-1">
               {displayName}
             </div>
             <div className="bg-gray-100 rounded-lg p-4">
-              <p className="text-gray-800">{testimonial}</p>
+              <p className="text-black">{testimonial}</p>
             </div>
           </div>
         </div>

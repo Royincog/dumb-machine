@@ -3,7 +3,9 @@ import AuthFormAction from "./AuthFormAction";
 import TestimonialList from "./TestimonialList";
 import { useRealtimeCollection } from "../firebaseconfig/firedbutil";
 import testimonial from "../assets/testimonial.png";
+
 import { Bounce } from "react-awesome-reveal";
+
 function Testimonial() {
   const { data: users } = useRealtimeCollection("users");
 
