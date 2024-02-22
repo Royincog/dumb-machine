@@ -43,7 +43,7 @@ const Form = () => {
         <input
           ref={inputRef}
           placeholder="🦄 say dumb things !!"
-          className="bg-white appearance-none border-2 border-gray-200 rounded py-2 px-4 text-black leading-tight focus:outline-none focus:bg-white focus:border-black mr-4"
+          className="bg-white appearance-none border-2 border-gray-200 rounded py-2 px-4 text-black leading-tight focus:outline-none focus:bg-white focus:border-black mr-4 min-[320px]:mb-5 min-[320px]:pb-5"
           id="inline-full-name"
           type="text"
         />
