@@ -15,7 +15,6 @@ function AuthFormAction() {
   //On click of login Button
   const loginUser = async () => {
     try {
-      
       const { user } = await signInWithGooglePopUp();
       const exists = await doesDocumentExist("users", user.uid);
       if (!exists) {
