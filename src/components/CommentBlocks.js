@@ -1,7 +1,6 @@
 import React from "react";
 
 function CommentBlocks({ displayName, testimonial, index, userImage }) {
-  console.log("User image is ", userImage);
   return (
     <div className="flex flex-col items-center py-10">
       <div className="space-y-4 w-full max-w-xl">
@@ -20,7 +19,7 @@ function CommentBlocks({ displayName, testimonial, index, userImage }) {
             />
           </div>
           <div>
-            <div className="text-sm font-semibold text-black pr-10 py-1">
+            <div className="text-sm font-semibold text-black text-left py-1">
               {displayName}
             </div>
             <div className="bg-gray-100 rounded-lg p-4">
