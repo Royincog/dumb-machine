@@ -1,11 +1,8 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import IndexPage from "./components/IndexPage";
 import BlogDetail from "./components/BlogDetail";
 import Testimonial from "./components/Testimonial";
 import { UserProvider } from "./contexts/UserProvider";
-
-import { lazy } from "react";
-
-const IndexPage = lazy(() => import("./components/IndexPage"));
 
 function App() {
   return (
