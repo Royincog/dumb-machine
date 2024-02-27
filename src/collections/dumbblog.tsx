@@ -4,6 +4,7 @@ export type DumbBlog = {
   id: string;
   heading: string;
   description: string;
+  card_description: string;
   category: string;
   added_on: Date;
   thumbnail_image: string;
@@ -18,7 +19,7 @@ export const dumbblogcollection = buildCollection<DumbBlog>({
   properties: {
     id: buildProperty({
       name: "Blog ID",
-      validation: { required: true },
+      validation: { required: true, unique: true },
       dataType: "string",
     }),
     heading: buildProperty({
@@ -28,6 +29,12 @@ export const dumbblogcollection = buildCollection<DumbBlog>({
     }),
     description: buildProperty({
       name: "Description",
+      validation: { required: true },
+      dataType: "string",
+      markdown: true,
+    }),
+    card_description: buildProperty({
+      name: "Blog Card Short Description",
       validation: { required: true },
       dataType: "string",
       markdown: true,
