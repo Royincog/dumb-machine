@@ -4,6 +4,7 @@ import useSWR from "swr";
 import Showdown from "showdown";
 import getBlogs from "../firebaseconfig/blogs/firebasegetblogutil";
 import LoadingDots from "./LoadingDots";
+import { Markup } from "interweave";
 
 const BlogDetail = () => {
   const { id } = useParams();
@@ -49,7 +50,7 @@ const BlogSection = ({ blog }) => {
     replace: `<${key} class="${classMap[key]}" $1>`,
   }));
   const converter = new Showdown.Converter({ extensions: [...bindings] });
-  const description = converter.makeHtml(blog.description);
+  const description = converter.makeHtml(blog?.description);
 
   return (
     <main>
@@ -95,11 +96,8 @@ const BlogSection = ({ blog }) => {
             />
           </figure>
           <div>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: description,
-              }}
-            ></div>
+
+            <Markup content={description} />
           </div>
         </article>
       </section>

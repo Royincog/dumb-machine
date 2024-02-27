@@ -4,17 +4,27 @@ import getBlogs from "../firebaseconfig/blogs/firebasegetblogutil";
 import { useNavigate } from "react-router-dom";
 import Showdown from "showdown";
 import LoadingDots from "./LoadingDots";
+import { Markup } from "interweave";
 
 function BlogList() {
-  const converter = new Showdown.Converter();
+  const classMap = {
+    p: "overflow-hidden overflow-ellipsis whitespace-nowrap",
+  };
+
+  const bindings = Object.keys(classMap).map((key) => ({
+    type: "output",
+    regex: new RegExp(`<${key}(.*)>`, "g"),
+    replace: `<${key} class="${classMap[key]}" $1>`,
+  }));
+
+  const converter = new Showdown.Converter({
+    simpleLineBreaks: false,
+    extensions: [...bindings],
+  });
   const { data: blogs, error } = useSWR("blogs", getBlogs);
+
   if (error) return <div className="text-red-700">Failed to load</div>;
-  if (!blogs)
-    return (
-      <React.Fragment>
-        <LoadingDots />
-      </React.Fragment>
-    );
+  if (!blogs) return <LoadingDots />;
   return (
     <>
       {" "}
@@ -35,22 +45,15 @@ const Card = ({ data, converter }) => {
     navigate(`/${data.id}`);
   };
   return (
-    <>
-      <article className="bg-white flex flex-col max-w-xs overflow-hidden rounded-lg shadow py-4">
-        <img src={data.thumbnail_image} alt="" onClick={handleClick} />
-        <div className="px-4 py-6">
-          <h2 className="font-semibold text-2xl">{data.heading}</h2>
-          <div className="py-2">
-            <div
-              className="overflow-hidden overflow-ellipsis whitespace-nowrap"
-              dangerouslySetInnerHTML={{
-                __html: converter.makeHtml(data.description),
-              }}
-            ></div>
-          </div>
+    <article className="bg-white flex flex-col max-w-xs overflow-hidden rounded-lg shadow py-4">
+      <img src={data.thumbnail_image} alt="" onClick={handleClick} />
+      <div className="px-4 py-6">
+        <h2 className="font-semibold text-2xl">{data.heading}</h2>
+        <div className="py-2">
+          <Markup content={converter.makeHtml(data?.card_description)} />
         </div>
-      </article>
-    </>
+      </div>
+    </article>
   );
 };
 
