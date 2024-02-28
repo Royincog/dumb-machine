@@ -17,14 +17,25 @@ function AboutSection() {
             Hi, I am <Link to="/portfolio">Rajarshi Roy !!</Link>
           </h1>
           <p className="mb-8 leading-relaxed font-medium">
-            I am a happy to go lucky man, never been satisfied with
+            You see, life to me is like an all-you-can-eat buffet - <br />
+            I'm always wondering why the desserts are at the end and why I can't
+            start with them first. <br />
+            It's a series of weird questions, endless curiosity, and a
+            relentless pursuit of...well, more! <br />
             <br />
-            what I have, been wondering why life is like this and <br />
-            some weired questions.I am a foodie,an adventurer and someone <br />
-            who makes and break things,mostly I break, and I also instruct my{" "}
+            I'm that person who looks at a mountain and doesn't just see a
+            mountain; <br />I see a challenge, a story, and a potential broken
+            limb.
+            <br /> But hey, what's life without a few scars and tales to tell,
+            right? <br />I make things, break things (mostly break things), and
+            on a good day, <br />I manage to put some of them back together.
+            <br /> I'm the kind of "dumb" person who believes that if you're not
+            living on the edge,
+            <br /> you're taking up too much space.
             <br />
-            Dumb Machine !!
+            <br />
           </p>
+
           <div className="py-3">
             {" "}
             <p className="mb-2 leading-relaxed font-semibold">

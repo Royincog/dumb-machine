@@ -37,7 +37,7 @@ function BlogList() {
   if (!blogs) return <LoadingDots />;
   return (
     <>
-      <h1 className="font-bold text-5xl">Dumb Blog Section 🍪</h1>
+      <h1 className="font-bold text-5xl">Dumb Blog Section 🦩</h1>
       <h4 className="pt-6 leading-relaxed font-semibold">
         Select your "dumb" category
       </h4>

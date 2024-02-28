@@ -24,7 +24,7 @@ function ReactionTracker() {
   return (
     <>
       <p className="pb-3 font-semibold">
-        Press the button if you like the dumb <br /> website 🍪☕
+        Press the button if you like my dumb <br /> website 🍪☕
       </p>
       <div className="flex flex-row gap-3 justify-center">
         <Button
