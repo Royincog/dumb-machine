@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useSWR from "swr";
 import Showdown from "showdown";
 import getBlogs from "../firebaseconfig/blogs/firebasegetblogutil";
@@ -41,6 +41,7 @@ const BlogDetail = () => {
 const BlogSection = ({ blog }) => {
   const classMap = {
     h1: "text-3xl font-semibold",
+    h2: "text-xl font-semibold leading-loose sm:px-2 md:px-2 py-2 md:py-2 ",
     p: "px-4 sm:px-6 md:px-8 py-4 md:py-8 leading-loose text-lg",
   };
 
@@ -60,6 +61,12 @@ const BlogSection = ({ blog }) => {
       >
         <article>
           <header className="w-full mx-auto">
+            <Link
+              to="/"
+              className="text-decoration-line: underline font-semibold leading-loose text-lg"
+            >
+              Back
+            </Link>
             <h1
               style={{ marginBottom: "0" }}
               className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 break-words text-wrap"

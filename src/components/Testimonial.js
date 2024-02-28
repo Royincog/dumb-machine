@@ -28,6 +28,9 @@ function Testimonial() {
           </h1>
         </div>
         <AuthFormAction />
+        <p className="pt-10 leading-relaxed text-pretty font-bold text-xl">
+          What other "dumb" people say about me 🌈{" "}
+        </p>
         {users.length > 0 ? <TestimonialList /> : null}
       </div>
     </div>
