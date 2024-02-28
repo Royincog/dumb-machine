@@ -1,4 +1,5 @@
 import "../App.css";
+import { FilterProvider } from "../contexts/FilterProvider";
 import AboutSection from "./AboutSection";
 import BlogList from "./BlogList";
 import CreditStack from "./CreditStack";
@@ -20,21 +21,23 @@ function IndexPage() {
               </Fade>
             </div>
 
-            <p className="text-xl mb-6 font-normal">
+            <p className="text-xl mb-6 font-medium leading-relaxed">
               The story is about me and my{" "}
-              <span className="font-semibold">"dumb"</span> experiences in tech
-              !!
+              <span className="font-bold">"dumb"</span> experiences in tech !!
             </p>
             <Bounce cascade damping={0.2}>
               <ReactionTracker />
               <AboutSection />
             </Bounce>
             <Fade cascade damping={0.1}>
-              <BlogList />
+              <FilterProvider>
+                <BlogList />
+              </FilterProvider>
             </Fade>
           </div>
         </div>
       </div>
+
       <CreditStack />
     </>
   );

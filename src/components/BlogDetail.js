@@ -62,7 +62,7 @@ const BlogSection = ({ blog }) => {
           <header className="w-full mx-auto">
             <h1
               style={{ marginBottom: "0" }}
-              className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 break-words overflow-hidden text-wrap"
+              className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 break-words text-wrap"
             >
               {blog.heading}
             </h1>
@@ -96,7 +96,6 @@ const BlogSection = ({ blog }) => {
             />
           </figure>
           <div>
-
             <Markup content={description} />
           </div>
         </article>

@@ -5,6 +5,7 @@ import picthree from "../assets/grid-picthree.png";
 import picfour from "../assets/grid-picfour.png";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
+import { JackInTheBox, Bounce } from "react-awesome-reveal";
 
 function AboutSection() {
   const navigate = useNavigate();
@@ -29,12 +30,14 @@ function AboutSection() {
             <p className="mb-2 leading-relaxed font-semibold">
               What other people say about me !!{" "}
             </p>
-            <Button
-              text="dumb comments"
-              onClick={() => {
-                navigate("/testimonial");
-              }}
-            />
+            <Bounce cascade damping={0.7} fraction={0.8}>
+              <Button
+                text="dumb comments"
+                onClick={() => {
+                  navigate("/testimonial");
+                }}
+              />
+            </Bounce>
           </div>
         </div>
         <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
@@ -48,21 +51,26 @@ function Grid() {
   return (
     <div className="container mx-auto p-4">
       <div className="grid grid-cols-4 gap-4">
-        <div className="overflow-hidden rounded-lg">
-          <img src={picone} alt="" className="w-full h-auto" />
-        </div>
-
-        <div className="overflow-hidden rounded-lg">
-          <img src={pictwo} alt="" className="w-full h-auto" />
-        </div>
-
-        <div className="overflow-hidden rounded-lg">
-          <img src={picthree} alt="" className="w-full h-auto" />
-        </div>
-
-        <div className="overflow-hidden rounded-lg">
-          <img src={picfour} alt="" className="w-full h-auto" />
-        </div>
+        <JackInTheBox cascade damping={0.7} fraction={0.7}>
+          <div className="overflow-hidden rounded-lg">
+            <img src={picone} alt="" className="w-full h-auto" />
+          </div>
+        </JackInTheBox>
+        <JackInTheBox cascade damping={0.7} fraction={0.7}>
+          <div className="overflow-hidden rounded-lg">
+            <img src={pictwo} alt="" className="w-full h-auto" />
+          </div>
+        </JackInTheBox>
+        <JackInTheBox cascade damping={0.7} fraction={0.7}>
+          <div className="overflow-hidden rounded-lg">
+            <img src={picthree} alt="" className="w-full h-auto" />
+          </div>
+        </JackInTheBox>
+        <JackInTheBox cascade damping={0.7} fraction={0.7}>
+          <div className="overflow-hidden rounded-lg">
+            <img src={picfour} alt="" className="w-full h-auto" />
+          </div>
+        </JackInTheBox>
       </div>
     </div>
   );
