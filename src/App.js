@@ -3,6 +3,7 @@ import IndexPage from "./components/IndexPage";
 import BlogDetail from "./components/BlogDetail";
 import Testimonial from "./components/Testimonial";
 import { UserProvider } from "./contexts/UserProvider";
+import Portfolio from "./components/Portfolio";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<IndexPage />} />
         <Route path="/:id" element={<BlogDetail />} />
+        <Route path="/portfolio" element={<Portfolio />} />
         <Route
           path="/testimonial"
           element={
