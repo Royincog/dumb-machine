@@ -93,7 +93,7 @@ const BlogSection = ({ blog }) => {
               <div className="flex items-center">
                 <div className="author">
                   <p htmlFor="author" className="font-semibold text-xl">
-                    By Dumb Person
+                    By Rajarshi Roy
                   </p>
                 </div>
               </div>
