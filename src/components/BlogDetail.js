@@ -92,7 +92,10 @@ const BlogSection = ({ blog }) => {
               />
               <div className="flex items-center">
                 <div className="author">
-                  <p htmlFor="author" className="font-semibold text-xl">
+                  <p
+                    htmlFor="author"
+                    className="font-semibold text-xl leading-relaxed"
+                  >
                     <span className="pl-3"></span> By Rajarshi Roy
                   </p>
                 </div>

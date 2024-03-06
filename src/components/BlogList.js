@@ -8,6 +8,7 @@ import { Markup } from "interweave";
 import Dropdown from "./Dropdown";
 import { FilterContext } from "../contexts/FilterProvider";
 import { Bounce } from "react-awesome-reveal";
+import { useInView } from "react-intersection-observer";
 
 const classMap = {
   p: "overflow-hidden overflow-ellipsis whitespace-nowrap",
@@ -46,7 +47,7 @@ function BlogList() {
         <div className="flex flex-wrap justify-center gap-4 lg:gap-4">
           {filteredBlogs.map((blog, index) => (
             <Bounce cascade damping={0.9}>
-              <Card key={index} data={blog} converter={converter} />
+              <LazyCard key={index} data={blog} converter={converter} />
             </Bounce>
           ))}
         </div>
@@ -54,11 +55,7 @@ function BlogList() {
     </>
   );
 }
-
-const Card = ({ data }) => {
-  const navigate = useNavigate();
-  const handleClick = () => navigate(`/${data.id}`);
-
+const Card = ({ data, handleClick }) => {
   return (
     <article
       className="bg-white flex flex-col max-w-xs overflow-hidden rounded-lg shadow py-4"
@@ -72,6 +69,26 @@ const Card = ({ data }) => {
         </div>
       </div>
     </article>
+  );
+};
+const LazyCard = ({ data }) => {
+  const navigate = useNavigate();
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Trigger only once
+    rootMargin: "200px 0px", // Loading a bit before the element comes into view
+  });
+
+  const handleClick = () => navigate(`/${data.id}`);
+
+  // Only render the Card component if inView is true
+  return (
+    <div ref={ref}>
+      {inView && (
+        <Bounce cascade damping={0.9}>
+          <Card data={data} handleClick={handleClick} />
+        </Bounce>
+      )}
+    </div>
   );
 };
 
