@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/dumb-machine/static/css/main.c0a0102e.css",
-    "main.js": "/dumb-machine/static/js/main.5ad1eb72.js",
+    "main.js": "/dumb-machine/static/js/main.39880535.js",
     "static/js/592.a0e214b9.chunk.js": "/dumb-machine/static/js/592.a0e214b9.chunk.js",
     "static/media/grid-picfour.png": "/dumb-machine/static/media/grid-picfour.b4a89791d7a60be5cdbd.png",
     "static/media/grid-picthree.png": "/dumb-machine/static/media/grid-picthree.129f22bce4086e7a3898.png",
@@ -11,11 +11,11 @@
     "service-worker.js": "/dumb-machine/service-worker.js",
     "index.html": "/dumb-machine/index.html",
     "main.c0a0102e.css.map": "/dumb-machine/static/css/main.c0a0102e.css.map",
-    "main.5ad1eb72.js.map": "/dumb-machine/static/js/main.5ad1eb72.js.map",
+    "main.39880535.js.map": "/dumb-machine/static/js/main.39880535.js.map",
     "592.a0e214b9.chunk.js.map": "/dumb-machine/static/js/592.a0e214b9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c0a0102e.css",
-    "static/js/main.5ad1eb72.js"
+    "static/js/main.39880535.js"
   ]
 }
