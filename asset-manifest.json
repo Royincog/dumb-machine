@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/dumb-machine/static/css/main.1f16d994.css",
-    "main.js": "/dumb-machine/static/js/main.38b07608.js",
+    "main.css": "/dumb-machine/static/css/main.ac550b69.css",
+    "main.js": "/dumb-machine/static/js/main.098b3e37.js",
     "static/js/592.a0e214b9.chunk.js": "/dumb-machine/static/js/592.a0e214b9.chunk.js",
     "static/media/grid-picfour.png": "/dumb-machine/static/media/grid-picfour.b4a89791d7a60be5cdbd.png",
     "static/media/grid-picthree.png": "/dumb-machine/static/media/grid-picthree.129f22bce4086e7a3898.png",
@@ -10,12 +10,12 @@
     "static/media/grid-pictwo.png": "/dumb-machine/static/media/grid-pictwo.771b02d1572c37995371.png",
     "service-worker.js": "/dumb-machine/service-worker.js",
     "index.html": "/dumb-machine/index.html",
-    "main.1f16d994.css.map": "/dumb-machine/static/css/main.1f16d994.css.map",
-    "main.38b07608.js.map": "/dumb-machine/static/js/main.38b07608.js.map",
+    "main.ac550b69.css.map": "/dumb-machine/static/css/main.ac550b69.css.map",
+    "main.098b3e37.js.map": "/dumb-machine/static/js/main.098b3e37.js.map",
     "592.a0e214b9.chunk.js.map": "/dumb-machine/static/js/592.a0e214b9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1f16d994.css",
-    "static/js/main.38b07608.js"
+    "static/css/main.ac550b69.css",
+    "static/js/main.098b3e37.js"
   ]
 }
