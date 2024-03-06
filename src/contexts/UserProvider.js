@@ -11,6 +11,7 @@ const authStateFetcher = () => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       unsubscribe(); // Immediately unsubscribe since we only want the initial auth state
       if (user) {
+        console.log("user info ", user);
         resolve({
           displayName: user.displayName,
           email: user.email,
@@ -26,12 +27,13 @@ const authStateFetcher = () => {
 export const useUser = () => useContext(UserContext);
 
 export const UserProvider = ({ children }) => {
-  const {
-    data: currentUser,
-    mutate,
-  } = useSWR("firebaseAuth", authStateFetcher, {
-    revalidateOnFocus: true, // Adjust based on your needs
-  });
+  const { data: currentUser, mutate } = useSWR(
+    "firebaseAuth",
+    authStateFetcher,
+    {
+      revalidateOnFocus: true, // Adjust based on your needs
+    }
+  );
 
   // Use useMemo to memoize the context value
   const value = useMemo(() => ({ currentUser, mutate }), [currentUser, mutate]);

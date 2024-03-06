@@ -10,7 +10,14 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<IndexPage />} />
-        <Route path="/:id" element={<BlogDetail />} />
+        <Route
+          path="/:id"
+          element={
+            <UserProvider>
+              <BlogDetail />
+            </UserProvider>
+          }
+        />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route
           path="/testimonial"

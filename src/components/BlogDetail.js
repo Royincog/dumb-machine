@@ -6,6 +6,7 @@ import getBlogs from "../firebaseconfig/blogs/firebasegetblogutil";
 import LoadingDots from "./LoadingDots";
 import { Markup } from "interweave";
 import { formatDate } from "../utils/dateTimeUtil";
+import BlogReview from "./BlogReview";
 
 const BlogDetail = () => {
   const { id } = useParams();
@@ -36,10 +37,10 @@ const BlogDetail = () => {
   if (error) return <div>Error loading blog</div>;
   if (!blog) return <div>Blog not found</div>;
 
-  return <BlogSection blog={blog} />;
+  return <BlogSection blog={blog} id={id} />;
 };
 
-const BlogSection = ({ blog }) => {
+const BlogSection = ({ blog, id }) => {
   const classMap = {
     h1: "text-3xl font-semibold",
     h2: "text-xl font-semibold leading-loose sm:px-2 md:px-2 py-2 md:py-2 ",
@@ -113,6 +114,11 @@ const BlogSection = ({ blog }) => {
             <Markup content={description} />
           </div>
         </article>
+        <h1 className="font-bold leading-loose text-xl pb-2">
+          Dumb Blog Review Section 🦩{" "}
+        </h1>
+
+        <BlogReview blogId={id} />
       </section>
     </main>
   );
