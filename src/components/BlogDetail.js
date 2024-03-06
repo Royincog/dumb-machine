@@ -88,7 +88,7 @@ const BlogSection = ({ blog }) => {
                 height="60"
                 width="60"
                 className="rounded-full flex mr-1.5"
-                src="https://api.dicebear.com/7.x/notionists/svg?scale=150"
+                src="https://api.dicebear.com/7.x/notionists/svg?seed=rajarshi&scale=150"
               />
               <div className="flex items-center">
                 <div className="author">
