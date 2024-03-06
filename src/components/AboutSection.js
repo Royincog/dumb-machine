@@ -14,9 +14,9 @@ function AboutSection() {
       <div className="mx-auto flex flex-col md:flex-row items-center justify-center px-6 lg:px-32 py-2">
         <div className="flex-grow flex flex-col items-center md:items-start text-center md:text-left">
           <h1 className="title-font sm:text-4xl text-3xl mb-4 font-semibold text-black">
-            Hi, I am <Link to="/portfolio">Rajarshi Roy !!</Link>
+            Hi, I am <Link to="/">Rajarshi Roy !!</Link>
           </h1>
-          <p className="mb-8 leading-relaxed font-medium">
+          <p className="leading-relaxed font-medium">
             You see, life to me is like an all-you-can-eat buffet - <br />
             I'm always wondering why the desserts are at the end and why I can't
             start with them first. <br />
@@ -36,7 +36,7 @@ function AboutSection() {
             <br />
           </p>
 
-          <div className="py-3">
+          <div className="pt-2">
             {" "}
             <p className="mb-2 leading-relaxed font-semibold">
               What other people say about me !!{" "}

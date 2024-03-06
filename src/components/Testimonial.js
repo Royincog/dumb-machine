@@ -31,7 +31,11 @@ function Testimonial() {
         <p className="pt-10 leading-relaxed text-pretty font-bold text-xl">
           What other "dumb" people say about me 🌈{" "}
         </p>
-        {users.length > 0 ? <TestimonialList /> : null}
+        {users.length > 0 ? (
+          <TestimonialList />
+        ) : (
+          <p className="py-7">No one said anything 🚗</p>
+        )}
       </div>
     </div>
   );

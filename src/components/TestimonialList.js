@@ -2,6 +2,7 @@ import { useRealtimeCollection } from "../firebaseconfig/firedbutil";
 import CommentBlocks from "./CommentBlocks";
 import { Bounce } from "react-awesome-reveal";
 import LoadingDots from "./LoadingDots";
+
 function TestimonialList() {
   const { data: users, isLoading, error } = useRealtimeCollection("users");
 

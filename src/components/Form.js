@@ -3,9 +3,11 @@ import { useUser } from "../contexts/UserProvider";
 import { saveUserTestimonialToFireBase } from "../firebaseconfig/auth/saveuserdata";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import emojiRegex from "emoji-regex";
 
 import Button from "./Button";
 const Form = () => {
+  const regex = emojiRegex();
   const regexPtt = /^[\p{L}\p{N}]+( +[\p{L}\p{N}]+)*$/u;
   const { currentUser } = useUser();
   const inputRef = useRef(null);
@@ -17,7 +19,7 @@ const Form = () => {
       return;
     }
     const testimonial = inputRef.current.value;
-    if (regexPtt.test(testimonial)) {
+    if (regexPtt.test(testimonial) || regex.test(testimonial)) {
       await saveUserTestimonialToFireBase(currentUser, testimonial)
         .then(() => {
           toast.success("Thanks for the dumb comment !! 🦩");

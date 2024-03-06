@@ -5,6 +5,7 @@ import Showdown from "showdown";
 import getBlogs from "../firebaseconfig/blogs/firebasegetblogutil";
 import LoadingDots from "./LoadingDots";
 import { Markup } from "interweave";
+import { formatDate } from "../utils/dateTimeUtil";
 
 const BlogDetail = () => {
   const { id } = useParams();
@@ -73,6 +74,9 @@ const BlogSection = ({ blog }) => {
             >
               {blog.heading}
             </h1>
+            <p className="font-thin text-slate-500 leading-loose">
+              Published on {formatDate(blog?.added_on)}
+            </p>
           </header>
           <footer className="w-full mx-auto">
             <div
