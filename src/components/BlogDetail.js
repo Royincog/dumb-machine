@@ -87,13 +87,13 @@ const BlogSection = ({ blog }) => {
                 alt="Riley Egge depicted with a large curly black mustache"
                 height="60"
                 width="60"
-                className="rounded-full flex mr-1.5"
-                src="https://api.dicebear.com/7.x/notionists/svg?seed=rajarshi&scale=150"
+                className=" flex mr-1.5"
+                src="https://api.dicebear.com/7.x/notionists/svg?seed=rono&scale=150"
               />
               <div className="flex items-center">
                 <div className="author">
                   <p htmlFor="author" className="font-semibold text-xl">
-                    By Rajarshi Roy
+                    <span className="pl-3"></span> By Rajarshi Roy
                   </p>
                 </div>
               </div>
