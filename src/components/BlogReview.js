@@ -5,10 +5,13 @@ import { ToastContainer, toast } from "react-toastify";
 import Button from "./Button";
 import BlogReviewList from "./BlogReviewList";
 import { Link } from "react-router-dom";
+import emojiRegex from "emoji-regex";
 
 function BlogReview({ blogId }) {
   const { currentUser } = useUser();
   const inputCommentsRef = useRef(null);
+  const regexPtt = /^[\p{L}\p{N}]+( +[\p{L}\p{N}]+)*$/u;
+  const emojiregex = emojiRegex();
 
   useEffect(() => {
     console.log("current user info ", currentUser);
@@ -20,7 +23,10 @@ function BlogReview({ blogId }) {
       blogId,
       comment: inputCommentsRef.current.value,
     };
-    if (true) {
+    if (
+      regexPtt.test(comments.comment.trim()) ||
+      emojiregex.test(comments.comment.trim())
+    ) {
       await saveUserCommentsToFireBase(currentUser, comments)
         .then(() => {
           toast.success("Thanks for the dumb review !! 🍪");

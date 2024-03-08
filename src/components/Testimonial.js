@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import AuthFormAction from "./AuthFormAction";
 import TestimonialList from "./TestimonialList";
 import { useRealtimeCollection } from "../firebaseconfig/firedbutil";
@@ -8,6 +8,10 @@ import { Bounce } from "react-awesome-reveal";
 
 function Testimonial() {
   const { data: users } = useRealtimeCollection("users");
+
+  const isTestimonialPresent = useMemo(() => {
+    return users.some((user) => user.testimonial);
+  }, [users]);
 
   return (
     <div className="font-Lora container mx-auto px-4 py-20">
@@ -31,7 +35,7 @@ function Testimonial() {
         <p className="pt-10 leading-relaxed text-pretty font-bold text-xl">
           What other "dumb" people say about me 🌈{" "}
         </p>
-        {users.length > 0 ? (
+        {users.length > 0 && isTestimonialPresent ? (
           <TestimonialList />
         ) : (
           <p className="py-7">No one said anything 🚗</p>

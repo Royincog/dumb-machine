@@ -19,7 +19,7 @@ const Form = () => {
       return;
     }
     const testimonial = inputRef.current.value;
-    if (regexPtt.test(testimonial) || regex.test(testimonial)) {
+    if (regexPtt.test(testimonial.trim()) || regex.test(testimonial.trim())) {
       await saveUserTestimonialToFireBase(currentUser, testimonial)
         .then(() => {
           toast.success("Thanks for the dumb comment !! 🦩");
